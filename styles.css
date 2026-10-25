@@ -1,0 +1,166 @@
+/* ===== Variables: colores y medidas que se repiten ===== */
+:root {
+  --color-fondo: #f7f7fb;
+  --color-texto: #1f2330;
+  --color-suave: #5b6275;
+  --color-acento: #4f46e5;
+  --color-tarjeta: #ffffff;
+  --radio: 12px;
+}
+
+/* ===== Reset básico ===== #4f46e5*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Página ===== */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+/* ===== Cabecera ===== */
+header {
+  background-color: var(--color-texto);
+  color: white;
+  text-align: center;
+  padding: 48px 16px 24px;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  color: #c7cbe0;
+  margin-top: 8px;
+}
+
+nav {
+  margin-top: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 10px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--color-acento);
+}
+
+/* ===== Contenido principal ===== */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+section {
+  padding: 32px 0;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+  color: var(--color-acento);
+}
+
+h3 {
+  margin: 24px 0 8px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/* ===== Lista de tecnologías como "etiquetas" ===== */
+#sobre-mi ul {
+  list-style: none;
+}
+
+#sobre-mi li {
+  display: inline-block;
+  background-color: var(--color-tarjeta);
+  border: 1px solid #e2e4ee;
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin: 0 8px 8px 0;
+  font-size: 0.9rem;
+}
+
+/* ===== Tarjetas de proyecto ===== */
+article {
+  background-color: var(--color-tarjeta);
+  border-radius: var(--radio);
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+article em {
+  color: var(--color-suave);
+  font-size: 0.9rem;
+}
+
+/* ===== Contacto ===== */
+#contacto ul {
+  list-style: none;
+}
+
+#contacto a {
+  color: var(--color-acento);
+  font-weight: 600;
+}
+
+/* ===== Pie ===== */
+footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--color-suave);
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive: pantallas de 768px o más (tablet / ordenador) ===== */
+/* Todo lo de arriba es para móvil. Aquí solo cambiamos lo que mejora en pantallas grandes. */
+@media (min-width: 768px) {
+  header {
+    padding: 80px 16px 40px;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  section {
+    padding: 56px 0;
+  }
+
+  /* Tarjetas de proyecto en dos columnas */
+  #proyectos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* El título "Proyectos" ocupa las dos columnas */
+  #proyectos h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  #proyectos article {
+    margin-bottom: 0;
+  }
+}

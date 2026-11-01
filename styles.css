@@ -5,10 +5,24 @@
   --color-suave: #5b6275;
   --color-acento: #4f46e5;
   --color-tarjeta: #ffffff;
+  --color-borde: #e2e4ee;
+  --color-cabecera: #1f2330;
   --radio: 12px;
 }
 
-/* ===== Reset básico ===== #4f46e5*/
+/* ===== Modo oscuro: cuando el <body> tiene la clase "oscuro" ===== */
+/* Solo cambiamos el valor de las variables; todo lo demás se adapta solo. */
+body.oscuro {
+  --color-fondo: #12141c;
+  --color-texto: #e6e8f0;
+  --color-suave: #9aa1b5;
+  --color-acento: #818cf8;
+  --color-tarjeta: #1c1f2b;
+  --color-borde: #2c3040;
+  --color-cabecera: #0b0d13;
+}
+
+/* ===== Reset básico ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,11 +35,12 @@ body {
   line-height: 1.6;
   color: var(--color-texto);
   background-color: var(--color-fondo);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* ===== Cabecera ===== */
 header {
-  background-color: var(--color-texto);
+  background-color: var(--color-cabecera);
   color: white;
   text-align: center;
   padding: 48px 16px 24px;
@@ -54,6 +69,23 @@ nav a {
 
 nav a:hover {
   color: var(--color-acento);
+}
+
+/* ===== Botón de modo oscuro ===== */
+#boton-tema {
+  margin-top: 16px;
+  padding: 6px 16px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #c7cbe0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+#boton-tema:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ===== Contenido principal ===== */
@@ -89,7 +121,7 @@ p {
 #sobre-mi li {
   display: inline-block;
   background-color: var(--color-tarjeta);
-  border: 1px solid #e2e4ee;
+  border: 1px solid var(--color-borde);
   border-radius: 999px;
   padding: 4px 14px;
   margin: 0 8px 8px 0;

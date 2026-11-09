@@ -146,6 +146,118 @@ article em {
   font-size: 0.9rem;
 }
 
+/* ===== Formación anterior (desplegable) ===== */
+details {
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 12px 24px;
+  margin-bottom: 16px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-acento);
+}
+
+details ul {
+  list-style: none;
+  margin-top: 12px;
+}
+
+details li {
+  padding: 8px 0;
+  border-top: 1px solid var(--color-borde);
+}
+
+details li span {
+  display: block;
+  color: var(--color-suave);
+  font-size: 0.9rem;
+}
+
+/* ===== Demo del Tron ===== */
+.boton-demo,
+.demo-botones button {
+  font: inherit;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--color-acento);
+  background-color: transparent;
+  color: var(--color-acento);
+  cursor: pointer;
+}
+
+.boton-demo:hover,
+.demo-botones button:hover {
+  background-color: var(--color-acento);
+  color: white;
+}
+
+dialog {
+  margin: auto;
+  width: min(560px, 92vw);
+  padding: 24px;
+  border: none;
+  border-radius: var(--radio);
+  background-color: var(--color-tarjeta);
+  color: var(--color-texto);
+}
+
+/* El fondo oscuro que queda detrás de la ventana */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+dialog h3 {
+  margin-top: 0;
+}
+
+.demo-texto {
+  font-size: 0.9rem;
+  color: var(--color-suave);
+}
+
+#tablero {
+  display: grid; /* las columnas las pone tron-demo.js */
+  gap: 2px;
+  margin: 16px 0 8px;
+}
+
+.casilla {
+  aspect-ratio: 1; /* casillas cuadradas */
+  border-radius: 3px;
+  background-color: var(--color-fondo);
+}
+
+.casilla.muro { background-color: var(--color-cabecera); }
+.casilla.explorada { background-color: #c7d2fe; }
+.casilla.camino { background-color: var(--color-acento); }
+.casilla.meta { background-color: #22c55e; }
+.casilla.agente { background-color: var(--color-acento); }
+
+body.oscuro .casilla.muro { background-color: #4b5168; }
+body.oscuro .casilla.explorada { background-color: #252b45; }
+body.oscuro .casilla.camino { background-color: #a5b4fc; }
+body.oscuro .casilla.meta { background-color: #22c55e; }
+
+#demo-info {
+  font-size: 0.9rem;
+  min-height: 1.5em;
+}
+
+.demo-botones {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#cerrar-demo {
+  margin-left: auto;
+}
+
 /* ===== Contacto ===== */
 #contacto ul {
   list-style: none;
@@ -154,6 +266,22 @@ article em {
 #contacto a {
   color: var(--color-acento);
   font-weight: 600;
+}
+
+/* ===== Botón de descargar CV ===== */
+#contacto .boton-cv {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background-color: var(--color-acento);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#contacto .boton-cv:hover {
+  opacity: 0.85;
 }
 
 /* ===== Pie ===== */

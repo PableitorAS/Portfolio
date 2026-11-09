@@ -6,16 +6,19 @@
     <title>Pablo García Cruz | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="tron-demo.js" defer></script>
   </head>
 
   <body>
     <header>
       <h1>Pablo García Cruz</h1>
-      <p>Estudiante de Ingeniería Informática · Desarrollador web en formación</p>
+      <p>Estudiante de Ingeniería Informática (Ciencia de Datos) · Desarrollador web en formación</p>
       <nav>
         <a href="#sobre-mi">Sobre mí</a>
+        <a href="#formacion">Formación</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
+        <a href="https://github.com/PableitorAS" target="_blank" rel="noopener">GitHub ↗</a>
       </nav>
       <button id="boton-tema" type="button">🌙 Modo oscuro</button>
     </header>
@@ -24,7 +27,8 @@
       <section id="sobre-mi">
         <h2>Sobre mí:</h2>
         <p>
-          Soy estudiante de <strong>3º de Ingeniería Informática en la Universidad de Huelva</strong>.
+          Soy estudiante de <strong>3º de Ingeniería Informática en la Universidad de Huelva</strong>,
+          en la rama de <strong>Ciencia de Datos</strong>.
           Me gusta entender cómo funcionan las cosas por dentro y convertir ideas en soluciones que la gente pueda usar.
         </p>
         <p>
@@ -46,8 +50,43 @@
         </ul>
       </section>
 
+      <section id="formacion">
+        <h2>Formación:</h2>
+
+        <article>
+          <h3>Grado en Ingeniería Informática</h3>
+          <p>Universidad de Huelva (UHU) · Rama de Ciencia de Datos</p>
+          <p><em>2024 – actualidad · Cursando 3º</em></p>
+        </article>
+
+        <!-- <details> crea un desplegable: solo se ve el <summary> hasta que se pulsa -->
+        <details>
+          <summary>Formación anterior</summary>
+          <ul>
+            <li><strong>Bachillerato de Ciencias y Tecnología</strong> · IES Juan Ramón Jiménez <span>2022 – 2024</span></li>
+            <li><strong>ESO</strong> · IES Juan Ramón Jiménez <span>2018 – 2022</span></li>
+            <li><strong>Educación Primaria</strong> · CEIP Virgen de Montemayor <span>2012 – 2018</span></li>
+          </ul>
+        </details>
+
+        <h3>Idiomas</h3>
+        <p>Español: nativo · Inglés: B2 (Cambridge English: First)</p>
+      </section>
+
       <section id="proyectos">
         <h2>Proyectos:</h2>
+
+        <article>
+          <h3>Agentes inteligentes para un juego tipo Tron</h3>
+          <p>
+            Prácticas de la asignatura Inteligencia Artificial, programadas en Java.
+            Un agente tiene que moverse por un laberinto hasta su meta sin chocar:
+            primero con agentes reactivos y deliberativos, después con búsqueda
+            (BFS, DFS y A*) y por último contra un rival, con Minimax.
+          </p>
+          <p><em>Java · Eclipse · 2026</em></p>
+          <button id="abrir-demo" class="boton-demo" type="button">▶ Ver demo</button>
+        </article>
 
         <article>
           <h3>Portfolio personal</h3>
@@ -73,10 +112,29 @@
         <p>¿Tienes una idea o necesitas una web? Escríbeme.</p>
         <ul>
           <li><a href="mailto:pablogarcruz@gmail.com">pablogarcruz@gmail.com</a></li>
-          <li><a href="https://github.com/PableitorAS" target="_blank">GitHub</a></li>
+          <li><a href="https://github.com/PableitorAS" target="_blank" rel="noopener">GitHub: PableitorAS</a></li>
         </ul>
+        <!-- download: el navegador descarga el archivo en vez de abrirlo -->
+        <a class="boton-cv" href="CV-Pablo-Garcia-Cruz.pdf" download>Descargar CV (PDF)</a>
       </section>
     </main>
+
+    <!-- Ventana emergente de la demo. <dialog> está oculto hasta que JavaScript lo abre -->
+    <dialog id="demo-tron">
+      <h3>Agente buscando la meta</h3>
+      <p class="demo-texto">
+        Laberinto de mi práctica 2. El agente (morado) busca la meta (verde).
+        Primero se colorean las casillas que explora el algoritmo y después se marca el camino elegido.
+        Subir o ir a la izquierda cuesta el doble.
+      </p>
+      <div id="tablero"></div>
+      <p id="demo-info"></p>
+      <div class="demo-botones">
+        <button id="demo-bfs" type="button">BFS</button>
+        <button id="demo-aestrella" type="button">A*</button>
+        <button id="cerrar-demo" type="button">Cerrar</button>
+      </div>
+    </dialog>
 
     <footer>
       <p>© 2026 Pablo García Cruz</p>
